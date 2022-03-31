@@ -1,0 +1,67 @@
+{
+  "goals": [
+    {
+      "id": 1,
+      "title": "Заработать 3 млн руб",
+      "date": "2022-11-28",
+      "importance": 10,
+      "achieved": true
+    },
+    {
+      "id": 2,
+      "title": "Уехать отдыхать",
+      "date": "2022-12-28",
+      "importance": 9,
+      "achieved": true
+    },
+    {
+      "id": 3,
+      "title": "Пробежать марофон",
+      "date": "2022-10-28",
+      "importance": 7,
+      "achieved": false
+    },
+    {
+      "id": 1648723052497,
+      "title": "6 дней в неделю делаю ЛФК",
+      "date": "2023-01-01",
+      "importance": "8",
+      "achieved": false
+    },
+    {
+      "id": 1648723100137,
+      "title": "На протяжении года хожу в бассейн >2 раз в неделю",
+      "date": "2023-01-01",
+      "importance": "6",
+      "achieved": false
+    },
+    {
+      "id": 1648723163289,
+      "title": "Работаю frontend developer в хорошей компании",
+      "date": "2022-06-01",
+      "importance": "10",
+      "achieved": false
+    },
+    {
+      "id": 1648729711893,
+      "title": "aaaa",
+      "date": "",
+      "importance": "",
+      "achieved": true
+    },
+    {
+      "id": 1648757231289,
+      "achieved": true,
+      "title": "adwfq",
+      "date": "",
+      "importance": ""
+    },
+    {
+      "id": 1648757601357,
+      "achieved": true,
+      "title": "qwdq2dqf",
+      "date": "",
+      "importance": ""
+    }
+  ]
+}

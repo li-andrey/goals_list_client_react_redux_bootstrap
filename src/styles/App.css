@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  margin: auto;
+  width: 800px;
+  max-width: 90%;
+}
+
+.goal__content {
+  margin-bottom: 15px;
+  margin-left: 0px !important;
+  border-bottom: 2px solid rgba(0, 128, 0, 0.082);
+}
+
+.goal__content > div:last-child {
+  text-align: end;
+  padding: 5px 0;
+}
+
+.achieved__wrapper {
+  background-color: rgba(221, 221, 221, 0.589);
+}
+
+h1 {
+  padding-top: 20%;
+  padding-bottom: 10px;
+}

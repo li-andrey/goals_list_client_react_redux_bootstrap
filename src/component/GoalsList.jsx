@@ -2,10 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Goal from "./Goal";
 
-const GoalsList = ({ remove, getNotAchievedGoals }) => {
-  const goals = useSelector((state) => {
+const GoalsList = ({ goals, remove, getNotAchievedGoals }) => {
+  /*   const goals = useSelector((state) => {
     return state.filter((goal) => goal.achieved !== true);
-  });
+  }); */
   if (!goals.length) {
     return (
       <div style={{ width: "90%" }}>

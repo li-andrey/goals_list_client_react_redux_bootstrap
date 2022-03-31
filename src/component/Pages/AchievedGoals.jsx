@@ -3,9 +3,11 @@ import GoalService from "../../API/GoalService";
 import Goal from "../Goal";
 import { useFetching } from "../../hooks/useFetching";
 import MyLoader from "../UI/loader/MyLoader";
+import { useSelector } from "react-redux";
 
 const AchievedGoals = () => {
   const [achievedGoals, setAchievedGoals] = useState([]);
+
   const [fetchGoalById, isLoading, error] = useFetching(async () => {
     const goals = await GoalService.getAll();
     setAchievedGoals(goals.filter((g) => g.achieved === true));
@@ -14,6 +16,10 @@ const AchievedGoals = () => {
   useEffect(async () => {
     fetchGoalById();
   }, []);
+
+  /*   const goals = useSelector((state) => {
+    state.filter((g) => g.achieved === true);
+  }); */
 
   return (
     <div>

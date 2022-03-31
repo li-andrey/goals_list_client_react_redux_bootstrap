@@ -20,7 +20,7 @@ function Goals() {
   const sortedAndSearchedGoals = useGoals(goals, filter.sort, filter.query);
 
   const newGoals = useSelector((state) => state);
-
+  console.log(111, newGoals);
   const createGoal = async (goal) => {
     setGoals([...goals, goal]);
     setModal(false);

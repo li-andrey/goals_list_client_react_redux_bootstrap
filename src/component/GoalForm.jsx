@@ -4,8 +4,10 @@ import { Modal, Form, Button } from "react-bootstrap";
 import { addGoal } from "../reducers/goalsReducer";
 import { useDispatch } from "react-redux";
 
-const GoalForm = ({ create, visible, setVisible }) => {
+const GoalForm = () => {
   const dispatch = useDispatch();
+  const [visible, setVisible] = useState(false);
+
   const [goal, setGoal] = useState({
     title: "",
     date: "",
@@ -21,12 +23,15 @@ const GoalForm = ({ create, visible, setVisible }) => {
       ...goal,
     };
     dispatch(addGoal(newGoal));
-    create(newGoal);
+    setVisible(false);
     setGoal({ title: "", date: "", importance: "" });
   };
 
   return (
     <>
+      <Button variant="success" onClick={() => setVisible(true)}>
+        Добавить цель
+      </Button>
       <Modal show={visible} onHide={() => setVisible(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Твоя новая цель</Modal.Title>

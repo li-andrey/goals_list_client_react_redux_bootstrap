@@ -3,7 +3,7 @@ import "../src/styles/App.css";
 import AppRouter from "./component/AppRouter";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from "./component/UI/navbar/MyNavbar";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { initGoals } from "./reducers/goalsReducer";
 
 function App() {
@@ -11,9 +11,6 @@ function App() {
   useEffect(() => {
     dispatch(initGoals())
   }, [dispatch])
-
-  const goals = useSelector(state => state)
-  console.log(goals)
 
   return (
     <div className="App">

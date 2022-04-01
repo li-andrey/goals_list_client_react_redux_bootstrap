@@ -1,11 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import Goal from "./Goal";
 
-const GoalsList = ({ goals, remove, getNotAchievedGoals }) => {
-  /*   const goals = useSelector((state) => {
-    return state.filter((goal) => goal.achieved !== true);
-  }); */
+const GoalsList = ({ goals }) => {
   if (!goals.length) {
     return (
       <div style={{ width: "90%" }}>
@@ -17,13 +13,7 @@ const GoalsList = ({ goals, remove, getNotAchievedGoals }) => {
   return (
     <div>
       {goals.map((goal, index) => (
-        <Goal
-          key={goal.id}
-          goal={goal}
-          number={index + 1}
-          remove={remove}
-          getNotAchievedGoals={getNotAchievedGoals}
-        />
+        <Goal key={goal.id} goal={goal} number={index + 1} />
       ))}
     </div>
   );

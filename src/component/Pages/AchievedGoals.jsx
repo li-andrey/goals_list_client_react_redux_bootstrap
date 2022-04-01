@@ -1,41 +1,20 @@
-import React, { useEffect, useState } from "react";
-import GoalService from "../../API/GoalService";
-import Goal from "../Goal";
-import { useFetching } from "../../hooks/useFetching";
-import MyLoader from "../UI/loader/MyLoader";
+import React from "react";
 import { useSelector } from "react-redux";
+import Goal from "../Goal";
 
 const AchievedGoals = () => {
-  const [achievedGoals, setAchievedGoals] = useState([]);
-
-  const [fetchGoalById, isLoading, error] = useFetching(async () => {
-    const goals = await GoalService.getAll();
-    setAchievedGoals(goals.filter((g) => g.achieved === true));
+  const achievedGoals = useSelector((state) => {
+    return state.filter((goal) => goal.achieved === true);
   });
-
-  useEffect(async () => {
-    fetchGoalById();
-  }, []);
-
-  /*   const goals = useSelector((state) => {
-    state.filter((g) => g.achieved === true);
-  }); */
 
   return (
     <div>
-      {error}
-      {isLoading ? (
-        <MyLoader />
-      ) : (
-        <div>
-          <h1>Выполненные цели:</h1>
-          {achievedGoals.map((goal, index) => (
-            <div key={goal.id} className="achieved__wrapper">
-              <Goal goal={goal} number={index + 1} />
-            </div>
-          ))}
+      <h1>Выполненные цели:</h1>
+      {achievedGoals.map((goal, index) => (
+        <div key={goal.id} className="achieved__wrapper">
+          <Goal goal={goal} number={index + 1} />
         </div>
-      )}
+      ))}
     </div>
   );
 };

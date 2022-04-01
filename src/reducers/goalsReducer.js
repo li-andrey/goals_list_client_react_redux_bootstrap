@@ -47,7 +47,7 @@ export const delGoal = (id) => {
     const deletedGoal = await GoalService.deleteGoal(id)
     dispatch({
       type: 'DEL_GOAL',
-      data: deletedGoal.id,
+      data: id,
     })
   }
 }

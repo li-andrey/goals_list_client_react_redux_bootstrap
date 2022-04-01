@@ -1,11 +1,21 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { useDispatch } from "react-redux";
+import { delGoal } from "../reducers/goalsReducer";
+import { updateGoal } from "../reducers/goalsReducer";
 
 const Goal = (props) => {
+  const dispatch = useDispatch();
+
   const handleAchieved = () => {
-    props.getNotAchievedGoals({ ...props.goal, achieved: true });
+    dispatch(updateGoal({ ...props.goal, achieved: true }));
   };
+
+  const handleDelete = () => {
+    dispatch(delGoal(props.goal.id));
+  };
+
   return (
     <div
       className="goal__content row cols-12 align-items-center "
@@ -32,11 +42,7 @@ const Goal = (props) => {
         </div>
       )}
       <div className="col-12 col-sm-1 d-grid gap-2">
-        <Button
-          variant="outline-danger"
-          size="sm"
-          onClick={() => props.remove(props.goal)} // для выполненных целей не работает delete. Попробовать решаить с помощью Redux
-        >
+        <Button variant="outline-danger" size="sm" onClick={handleDelete}>
           Удалить
         </Button>
       </div>

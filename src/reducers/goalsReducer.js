@@ -15,6 +15,7 @@ const goalsReducer = (state = [], action) => {
         ...goalToAchieve,
         achieved: true
       }
+
       return state.map((goal) => goal.id !== id ? goal : achievedGoal)
     }
     default:
@@ -55,6 +56,7 @@ export const delGoal = (id) => {
 export const updateGoal = (goal) => {
   return async dispatch => {
     const updatedGoal = await GoalService.achievedGoals(goal)
+
     dispatch({
       type: 'ACHIEVE_GOAL',
       data: updatedGoal,

@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "/api/"
+const baseUrl = "http://localhost:3001/api/"
 
 export default class GoalService {
   static async getAll() {
@@ -23,7 +23,9 @@ export default class GoalService {
   }
 
   static async achievedGoals(goal) {
+
     const response = await axios.put(`${baseUrl}goals/${goal.id}`, goal);
+
     return response.data;
   }
 }

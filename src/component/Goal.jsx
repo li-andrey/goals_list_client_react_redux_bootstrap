@@ -12,7 +12,7 @@ const Goal = (props) => {
 
   const handleAchieved = () => {
     setVisible(false);
-    dispatch(updateGoal({ ...props.goal, achieved: true }));
+    dispatch(updateGoal(props.goal));
   };
 
   const handleDelete = () => {

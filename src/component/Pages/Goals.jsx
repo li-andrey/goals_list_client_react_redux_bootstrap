@@ -11,6 +11,7 @@ function Goals() {
   const newGoals = useSelector((state) => {
     return state.filter((g) => g.achieved !== true);
   });
+  console.log("state", newGoals);
 
   const sortedAndSearchedGoals = useGoals(newGoals, filter.sort, filter.query);
 

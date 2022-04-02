@@ -18,8 +18,6 @@ const GoalForm = () => {
   const addNewGoal = (e) => {
     e.preventDefault();
     const newGoal = {
-      id: Date.now(),
-      achieved: false,
       ...goal,
     };
     dispatch(addGoal(newGoal));

@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-You can see this project [here] (https://goals-list-7.herokuapp.com/)
+You can see this project here - https://goals-list-7.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
